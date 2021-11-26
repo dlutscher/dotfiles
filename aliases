@@ -1,0 +1,74 @@
+# Fasd aliases
+alias v='f -e nvim' # quick opening files with vim
+alias vd='d -e nvim' # quick opening files with vim using folder name as pattern
+
+# use nvim
+alias vi=nvim
+
+# Clear alias
+alias c='clear'
+
+# Use enhanced diff tool (icdiff)
+alias diff=icdiff
+
+# Making cp interactive
+alias cp="cp -iv"
+alias rm="rm -iv"
+alias mv="mv -iv"
+
+# Better default du and df
+alias du="du -cksh"
+alias df="df -h"
+
+# Overriding system ctags
+alias ctags="`brew --prefix`/bin/ctags"
+
+# Reload the shell
+alias reload="exec ${SHELL} -l"
+
+# git commands
+alias gco='git checkout'
+alias gs='git status'
+alias ga='git add'
+alias gc='git commit -m'
+# difftool using coloring with icdiff
+alias gdiff='git difftool --extcmd icdiff -y'
+
+
+# --------------------------------------------------------------
+# OSX-Only Aliases
+# --------------------------------------------------------------
+
+# Remove DS_Store files recursively
+alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
+alias ssh='TERM=xterm-256color ssh'
+
+
+
+# --------------------------------------------------------------
+# work project specific aliases
+# --------------------------------------------------------------
+
+# usually all exports live in the `exports` file however these exports
+# are only used here so it's easier to maintain / see what they refer to
+export AC_DSM_REPO='/Users/d.lutscher/Documents/projects/dh-cc-automations-ds'
+export AC_BACKEND_REPO='/Users/d.lutscher/Documents/projects/dh-cc-automations'
+
+
+# poetry shell Autocomp DSM repo
+alias ads='. $AC_DSM_REPO/.venv/bin/activate'
+
+# load backend Prod environment and kubectl -> necessary to read postgres read-replica and get experiments filters
+alias load_env_kubectl_testing='source $AC_BACKEND_REPO/scripts/load_env.sh testing && source $AC_BACKEND_REPO/scripts/load_kubectl_context.sh'
+alias load_env_kubectl_staging='source $AC_BACKEND_REPO/scripts/load_env.sh staging && source $AC_BACKEND_REPO/scripts/load_kubectl_context.sh'
+alias load_env_kubectl_us='source $AC_BACKEND_REPO/scripts/load_env.sh us && source $AC_BACKEND_REPO/scripts/load_kubectl_context.sh'
+
+
+# access postgres read replica - NOTE: requires to run env loading alias (see above) first
+alias psql_testing='. ~/scripts/access_autocomp_db_testing.sh'
+alias psql_staging='. ~/scripts/access_autocomp_db_staging.sh'
+alias psql_us='. ~/scripts/access_autocomp_db_us.sh'
+export PATH="$HOME/.local/bin:$PATH"
+
+# shortcut for tmuxinator sessions
+alias tmds='tmuxinator start autocomp-ds-repl'
