@@ -63,7 +63,9 @@ source $HOME/google-cloud-sdk/path.zsh.inc
 source $HOME/google-cloud-sdk/completion.zsh.inc
 
 # use pyenv python version manager
-eval "$(pyenv init -)"
+# eval "$(pyenv init -)"  # for older pyenv versions
+eval "$(pyenv init --path)"  # for newer pyenv versions
+
 
 # autocomplete for terraform
 autoload -U +X bashcompinit && bashcompinit
