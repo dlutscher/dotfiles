@@ -35,6 +35,10 @@ alias gc='git commit -m'
 alias gdiff='git difftool --extcmd icdiff -y'
 
 
+# getting the current weather via CLI
+alias weather="curl wttr.in/berlin"
+
+
 # --------------------------------------------------------------
 # OSX-Only Aliases
 # --------------------------------------------------------------
