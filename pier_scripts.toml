@@ -1,0 +1,24 @@
+[scripts.black]
+alias = 'black'
+command = '''
+poetry run black --config=pyproject.toml $1
+'''
+tags = [
+    'python',
+    'formatting',
+]
+
+[scripts.delete-nodeshutdown]
+alias = 'delete-nodeshutdown'
+command = '''kubectl get pods | grep NodeShutdown | awk '{print }' | xargs kubectl delete pod'''
+tags = ['kubernetes']
+
+[scripts.example_with_tag]
+alias = 'example_with_tag'
+command = 'echo "example with tag"'
+tags = [
+    'example',
+    'example_tag',
+]
+
+[default]

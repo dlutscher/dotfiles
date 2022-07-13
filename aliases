@@ -38,6 +38,11 @@ alias gdiff='git difftool --extcmd icdiff -y'
 # getting the current weather via CLI
 alias weather="curl wttr.in/berlin"
 
+# combine bat with fzf for syntax-hilighted fuzzy search previews
+alias fbat="fzf --preview 'bat --color=always --style=numbers --line-range=:500 {}'"
+
+# kubectl shortcut
+alias k="kubectl"
 
 # --------------------------------------------------------------
 # OSX-Only Aliases
@@ -75,4 +80,5 @@ alias psql_us='. ~/scripts/access_autocomp_db_us.sh'
 export PATH="$HOME/.local/bin:$PATH"
 
 # shortcut for tmuxinator sessions
-alias tmds='tmuxinator start autocomp-ds-repl'
+alias tmds='tmuxinator start autocomp-data-science'
+alias tmbackend='tmuxinator start autocomp-backend'

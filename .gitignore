@@ -1,3 +1,4 @@
 # ignore any credentials or secrets
 *credentials*
 *secrets*
+*custom*

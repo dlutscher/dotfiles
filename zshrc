@@ -4,6 +4,8 @@ source ~/.aliases
 # secrets we might have saved as env variables
 # it's gitignored so the file must be created if manually
 source ~/.secrets
+# it's gitignored so the file must be created if manually
+source ~/.custom
 
 # --------------------------------------------------------------
 # ZSH configurations
@@ -14,6 +16,7 @@ plugins=(
   git zsh-autosuggestions brew pip
   zsh-syntax-highlighting
   docker
+  emoji
 )
 
 # checks every x days for an update
@@ -81,3 +84,9 @@ alias l="exa"
 alias ll="exa -bghl --color=automatic"
 alias la="exa -abghl --git --color=automatic"
 alias tree="exa --tree"
+
+export PATH="$HOME/.poetry/bin:$PATH"
+
+autoload -Uz compinit
+zstyle ':completion:*' menu select
+fpath+=~/.zfunc

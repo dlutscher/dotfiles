@@ -42,6 +42,23 @@ set scrolloff=7
 
 
 """""""""THEME SETTINGS""""""""""""
+filetype plugin indent on
+syntax on
+let $BAT_THEME="Nord"
+
 "set background=dark
 "colorscheme one
-set background=dark
+" set background=dark
+" let g:onedark_terminal_italics=1
+" let g:onedark_termcolors=256
+" colorscheme onedark
+
+" use nord color theme
+colorscheme nord
+
+" use iceberg color theme
+" colorscheme iceberg
+
+" Airline
+let g:airline_theme='nord'
+let g:lightline = { 'colorscheme': 'nord' }

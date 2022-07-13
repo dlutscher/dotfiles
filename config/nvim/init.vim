@@ -64,6 +64,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " onedark color scheme
 Plug 'joshdick/onedark.vim'
+" nord color theme
+Plug 'arcticicestudio/nord-vim'
 
 " for improved jumping behaviour (using [], [m, ...)
 Plug 'jeetsukumaran/vim-pythonsense', { 'for': 'python' }
@@ -79,16 +81,6 @@ for f in split(glob('$HOME/.config/nvim/plugins/*.vim'), '\n')
   exe 'source' f
 endfor
 
-
-" Color and syntax highlighting
-filetype plugin indent on
-syntax on
-let g:onedark_terminal_italics=1
-let g:onedark_termcolors=256
-colorscheme onedark
-
-" Airline
-let g:airline_theme='onedark'
 " User powerline symbols in Airline
 let g:airline_powerline_fonts = 1
 

@@ -1,6 +1,6 @@
 # /Users/d.lutscher/.config/tmuxinator/autocomp-ds-repl.yml
 
-name: autocomp-ds-repl
+name: autocomp-data-science
 root: ~/
 
 # Optional tmux socket
@@ -12,7 +12,7 @@ socket_name: default
 # Project hooks
 
 # Runs on project start, always
-on_project_start: cf ~/Documents/projects/dh-cc-automations-ds
+on_project_start: cd ~/Documents/projects/dh-cc-automations-ds
 
 # Run on project start, the first time
 # on_project_first_start: command
@@ -46,14 +46,12 @@ on_project_start: cf ~/Documents/projects/dh-cc-automations-ds
 
 windows:
   - editor:
-      layout: e61e,158x47,0,0[158x30,0,0,5,158x16,0,31{79x16,0,31,6,78x16,80,31,7}]
+      layout: f105,318x74,0,0[318x61,0,0,19,318x12,0,62,20]
       # Synchronize all panes of this window, can be enabled before or after the pane commands run.
       # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
       # synchronize: after
       panes:
         - ide:
-          - cd Documents/projects/dh-cc-automations-ds && poetry shell && nvim .
-        - repl:
-          - cd Documents/projects/dh-cc-automations-ds && poetry run ipython
+          - cd ~/Documents/projects/dh-cc-automations-ds && poetry shell && c
         - zsh:
-          - cd ~/Documents/projects/dh-cc-automations-ds
+          - cd ~/Documents/projects/dh-cc-automations-ds && c
