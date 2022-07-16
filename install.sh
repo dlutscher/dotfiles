@@ -26,21 +26,13 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 
 # we need ruby for tmuxinator
-if ! command -v gem &> /dev/null; then
-  brew install ruby
-fi
+brew install ruby
 
 # tool for pre-configuring tmux sessions
-if ! command -v tmuxinator &> /dev/null; then
-  gem install tmuxinator
-fi
+gem install tmuxinator
 
 # Ctags. (Used by Neovim)
-if ! command -v ctags &> /dev/null; then
-  brew install --HEAD universal-ctags/universal-ctags/universal-ctags
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-fi
-
+brew install --HEAD universal-ctags/universal-ctags/universal-ctags
 
 # Install dotfiles
 echo "Making a backup of your dotfiles ----> $HOME/dotfiles_OLD"
@@ -59,6 +51,7 @@ ln -nvfs $DOTFILES_DIR/exports         $HOME/.exports
 ln -nvfs $DOTFILES_DIR/aliases         $HOME/.aliases
 ln -nvfs $DOTFILES_DIR/bin             $HOME/bin
 ln -nvfs $DOTFILES_DIR/secrets         $HOME/.secrets
+ln -nvfs $DOTFILES_DIR/custom          $HOME/.custom
 
 
 # copies config folder (mostly neovim stuff) into home directory

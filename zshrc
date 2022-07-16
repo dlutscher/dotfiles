@@ -10,11 +10,10 @@ source ~/.custom
 # --------------------------------------------------------------
 # ZSH configurations
 # --------------------------------------------------------------
-ZSH_THEME="agnoster_mine"
+ZSH_THEME="agnoster"
 
 plugins=(
   git zsh-autosuggestions brew pip
-  zsh-syntax-highlighting
   docker
   emoji
 )
@@ -75,7 +74,7 @@ autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/terraform terraform
 
 # use zsh syntax highlighting
-source $HOME/Desktop/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOME/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 
 # for some reason these exa related aliases only work when I put them here
