@@ -33,6 +33,9 @@ alias ga='git add'
 alias gc='git commit -m'
 # difftool using coloring with icdiff
 alias gdiff='git difftool --extcmd icdiff -y'
+# get fzf list of all local branches for this repo
+alias lb='git checkout $(git branch -a | grep -v remotes | tr "*" " "| fzf)'
+alias rb='git checkout $(git branch -a | grep remotes | tr "*" " " | sed "s/remotes\/origin\///" | fzf)'
 
 
 # getting the current weather via CLI
