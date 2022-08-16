@@ -4,9 +4,6 @@ tap "homebrew/cask"
 tap "homebrew/core"
 tap "universal-ctags/universal-ctags"
 
-# Bourne-Again SHell, a UNIX command interpreter
-brew "bash"
-
 # Cross-platform make
 brew "cmake"
 
@@ -34,9 +31,6 @@ brew "findutils"
 # Command-line fuzzy finder
 brew "fzf"
 
-# Distributed revision control system
-brew "git"
-
 # Tool to build, change, and version infrastructure
 # a.k.a. infrastructure as code
 brew "hashicorp/tap/terraform"
@@ -62,9 +56,6 @@ brew "libpq"
 # Mac App Store command-line interface
 brew "mas"
 
-# Run a Kubernetes cluster locally
-brew "minikube"
-
 # Parser generator tool and incremental parsing library
 # used in Neovim for better syntax highlighting
 brew "tree-sitter"
@@ -86,9 +77,6 @@ brew "postgresql"
 
 # Python version management
 brew "pyenv"
-
-# Global python version used for some tools like `awk`
-brew "python@3.9"
 
 # line-oriented search tool: https://github.com/BurntSushi/ripgrep
 brew "ripgrep"
@@ -114,41 +102,8 @@ brew "zsh-syntax-highlighting"
 # lossless data-compression library
 brew "zlib"
 
-# Web browser focusing on privacy
-cask "brave-browser"
-
-# Web browser
-cask "firefox"
-
-# Google's web browser
-cask "google-chrome"
-
-# HTTP and GraphQL Client
-cask "insomnia"
-
-# Terminal emulator
-cask "iterm2"
-
-# Raycast lets you control your tools with a few keystrokes.
-cask "raycast"
-
-# Team communication and collaboration software
-cask "slack"
-
 # Move and resize windows with ease
 cask "spectacle"
 
-# Music streaming service
-cask "spotify"
-
-# Desktop client for WhatsApp
-cask "whatsapp"
-
 # Open-source version of the X.Org X Window System
 cask "xquartz"
-
-mas "GarageBand", id: 682658836
-mas "iMovie", id: 408981434
-mas "Keynote", id: 409183694
-mas "Numbers", id: 409203825
-mas "Pages", id: 409201541
