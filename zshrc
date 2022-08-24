@@ -10,7 +10,8 @@ source ~/.custom
 # --------------------------------------------------------------
 # ZSH configurations
 # --------------------------------------------------------------
-ZSH_THEME="agnoster"
+# ZSH_THEME="agnoster"
+ZSH_THEME="robbyrussell"
 
 plugins=(
   git zsh-autosuggestions brew pip
@@ -89,3 +90,4 @@ export PATH="$HOME/.poetry/bin:$PATH"
 autoload -Uz compinit
 zstyle ':completion:*' menu select
 fpath+=~/.zfunc
+source /Users/d.lutscher/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
