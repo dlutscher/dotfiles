@@ -23,10 +23,6 @@ export PATH='/bin:/sbin':"$PATH"
 # Poetry (python package manager)
 export PATH="$HOME/.poetry/bin:$PATH"
 
-
-# add a python3 lib to $PATH to use tmux's powerline feature
-export PATH="$HOME/.pyenv/versions/3.7.4/bin/python:$PATH"
-
 # add the location of the scripts file for Pier CLI: https://github.com/pier-cli/pier
 export PIER_CONFIG_PATH=$HOME/dotfiles/pier_scripts.toml
 
@@ -46,12 +42,3 @@ export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/
 
 # don't update non-relevant dependencies when installing a package
 export HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK=1
-
-
-# --------------------------------------------------------------
-# Project specific
-# --------------------------------------------------------------
-
-# add DSM repo to python path
-export WORK_PROJECTS_DIR="$HOME/Documents/projects"
-export PYTHONPATH="$WORK_PROJECTS_DIR/dh-cc-automations-ds/automations:$WORK_PROJECTS_DIR/dh-cc-automations-ds:$PYTHONPATH"
