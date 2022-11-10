@@ -1,3 +1,6 @@
+export SDKROOT="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk"
+export PATH="/opt/homebrew/bin:/Users/daniel/Library/Python/3.9/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:$PATH"
+
 # first go through all export and alias statements
 source ~/.exports
 source ~/.aliases
@@ -59,15 +62,10 @@ fi
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Updates PATH for the Google Cloud SDK
-source $HOME/google-cloud-sdk/path.zsh.inc
+source $HOME/software/google-cloud-sdk/path.zsh.inc
 
 # Enables zsh completion for gcloud.
-source $HOME/google-cloud-sdk/completion.zsh.inc
-
-# use pyenv python version manager
-# eval "$(pyenv init -)"  # for older pyenv versions
-eval "$(pyenv init --path)"  # for newer pyenv versions
-
+source $HOME/software/google-cloud-sdk/completion.zsh.inc
 
 # autocomplete for terraform
 autoload -U +X bashcompinit && bashcompinit
@@ -89,3 +87,24 @@ export PATH="$HOME/.poetry/bin:$PATH"
 autoload -Uz compinit
 zstyle ':completion:*' menu select
 fpath+=~/.zfunc
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+export PATH="$HOME/.pyenv/bin:$PATH"
+
+
+### Add these next lines to protect your system python from
+### pollution from 3rd-party packages
+# pip should only run if there is a virtualenv currently activated
+export PIP_REQUIRE_VIRTUALENV=true
+# commands to override pip restriction above.
+# use `gpip` or `gpip3` to force installation of
+# a package in the global python environment
+# Never do this! It is just an escape hatch.
+gpip(){
+   PIP_REQUIRE_VIRTUALENV="" pip "$@"
+}
+gpip3(){
+   PIP_REQUIRE_VIRTUALENV="" pip3 "$@"
+}
