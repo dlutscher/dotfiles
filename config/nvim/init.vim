@@ -31,6 +31,9 @@ Plug 'jalvesaq/vimcmdline'
 " highlights trailing whitespaces
 Plug 'ntpeters/vim-better-whitespace'
 
+" syntax highlighting for different languages
+Plug 'google/vim-jsonnet'
+
 " for aligning text
 " especially useful for copy-pasted texts
 " https://github.com/junegunn/vim-easy-align

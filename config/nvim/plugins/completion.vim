@@ -7,8 +7,18 @@ let g:clang2_placeholder_next='<C-j>'
 "=====================================================
 " COC Settings
 "=====================================================
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+" use <tab> for trigger completion and navigate to the next complete item
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+inoremap <silent><expr> <Tab> coc#pum#visible() ? coc#pum#confirm() : "Tab"
+inoremap <silent><expr> <S-TAB>
+      \ coc#pum#visible() ? coc#pum#next(1):
+      \ CheckBackspace() ? "\<S-Tab>" :
+      \ coc#refresh()
 
 let g:coc_snippet_next = '<tab>'
 
