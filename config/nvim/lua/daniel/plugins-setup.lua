@@ -88,6 +88,7 @@ return packer.startup(function(use)
 
   -- git integration
   use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
+  use("tpope/vim-fugitive")  -- plugin for powerful git integration
 
 
   if packer_bootstrap then

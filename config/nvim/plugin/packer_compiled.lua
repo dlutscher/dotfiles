@@ -191,6 +191,11 @@ _G.packer_plugins = {
     path = "/Users/d.lutscher/.local/share/nvim/site/pack/packer/start/vim-easyclip",
     url = "https://github.com/svermeulen/vim-easyclip"
   },
+  ["vim-fugitive"] = {
+    loaded = true,
+    path = "/Users/d.lutscher/.local/share/nvim/site/pack/packer/start/vim-fugitive",
+    url = "https://github.com/tpope/vim-fugitive"
+  },
   ["vim-maximizer"] = {
     loaded = true,
     path = "/Users/d.lutscher/.local/share/nvim/site/pack/packer/start/vim-maximizer",
