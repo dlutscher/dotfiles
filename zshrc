@@ -10,7 +10,7 @@ source ~/.custom
 # --------------------------------------------------------------
 # ZSH configurations
 # --------------------------------------------------------------
-ZSH_THEME="agnoster"
+ZSH_THEME="robbyrussell"
 
 plugins=(
   git zsh-autosuggestions brew pip
