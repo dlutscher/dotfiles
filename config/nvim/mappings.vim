@@ -12,8 +12,6 @@ cnoreabbrev WQ wq
 cnoreabbrev W w
 cnoreabbrev Q q
 cnoreabbrev Qall qall
-nnoremap n nzzzv
-nnoremap N Nzzzv
 
 
 " resizing panes
@@ -29,6 +27,10 @@ tnoremap <C-H> <C-\><C-N><C-W>h
 tnoremap <C-J> <C-\><C-N><C-W>j
 tnoremap <C-K> <C-\><C-N><C-W>k
 tnoremap <C-L> <C-\><C-N><C-W>l
+
+" create new splits
+nnoremap <Leader>sh :split
+nnoremap <Leader>sv :vsplit
 
 " Jump back mapping
  nnoremap <C-[> :pop<CR>

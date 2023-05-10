@@ -1,11 +1,52 @@
+" Coc configuration
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" GoTo code navigation
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gv :vsp<CR><Plug>(coc-definition)<C-W>L
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+vmap <leader>a <Plug>(coc-codeaction-selected)<CR>
+nmap <leader>a <Plug>(coc-codeaction-selected)<CR>
+
+
+
+let g:coc_global_extensions = [
+  \ 'coc-spell-checker',
+  \ 'coc-prettier',
+  \ 'coc-git',
+  \ 'coc-tsserver',
+  \ 'coc-pyright',
+  \ 'coc-markdownlint',
+  \ 'coc-json',
+  \ 'coc-html',
+  \ 'coc-go',
+  \ 'coc-docker',
+  \ 'coc-css',
+  \ 'coc-clangd',
+  \ 'coc-yaml',
+  \ 'coc-sh',
+  \ 'coc-highlight',
+  \ ]
 " Required:
 call plug#begin('~/.local/share/nvim/plugged')
 
 "Treesitter for syntax highlighting
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
-
-" for python indentation according to pep8
-Plug 'Vimjas/vim-python-pep8-indent'
 
 " Completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -54,7 +95,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'jiangmiao/auto-pairs'
 
 " fuzzy finder
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 " cool status bar

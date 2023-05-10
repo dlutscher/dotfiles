@@ -58,12 +58,6 @@ fi
 # FZF Initialization
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# Updates PATH for the Google Cloud SDK
-source $HOME/google-cloud-sdk/path.zsh.inc
-
-# Enables zsh completion for gcloud.
-source $HOME/google-cloud-sdk/completion.zsh.inc
-
 # use pyenv python version manager
 # eval "$(pyenv init -)"  # for older pyenv versions
 eval "$(pyenv init --path)"  # for newer pyenv versions
