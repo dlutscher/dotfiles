@@ -36,14 +36,8 @@ export ZSH_CUSTOM=$ZSH/custom
 # --------------------------------------------------------------
 source $ZSH/oh-my-zsh.sh
 
-# Tmuxinator completion
-source ~/.config/tmuxinator/completion/tmuxinator.zsh
-
 # Fasd initialization
 eval "$(fasd --init auto)"
-
-# Enhancd initialization
-source ~/utils/enhancd/init.sh
 
 # Run tmux on start
 if which tmux >/dev/null 2>&1; then
@@ -83,3 +77,25 @@ export PATH="$HOME/.poetry/bin:$PATH"
 autoload -Uz compinit
 zstyle ':completion:*' menu select
 fpath+=~/.zfunc
+
+
+# --------------------------------------------------------------
+# ZPLUG plugin manager
+# --------------------------------------------------------------
+export ZPLUG_HOME=/opt/homebrew/opt/zplug
+source $ZPLUG_HOME/init.zsh
+
+zplug "b4b4r07/enhancd", use:init.sh
+# export ENHANCD_FILTER=fzy
+
+# Install plugins if there are plugins that have not been installed
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+# Then, source plugins and add commands to $PATH
+zplug load
+
