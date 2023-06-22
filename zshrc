@@ -12,10 +12,18 @@ source ~/.custom
 # --------------------------------------------------------------
 ZSH_THEME="robbyrussell"
 
+# Which plugins would you like to load?
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(git zsh-syntax-highlighting)
 plugins=(
   git zsh-autosuggestions brew pip
   docker
   emoji
+  git zsh-syntax-highlighting
+
 )
 
 # checks every x days for an update
@@ -61,9 +69,6 @@ eval "$(pyenv init --path)"  # for newer pyenv versions
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/terraform terraform
 
-# use zsh syntax highlighting
-source $HOME/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
 
 # for some reason these exa related aliases only work when I put them here
 # at the very end of the file (and not in aliases)
@@ -99,3 +104,10 @@ fi
 # Then, source plugins and add commands to $PATH
 zplug load
 
+export PATH="/opt/homebrew/opt/gnu-getopt/bin:$PATH"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/d.lutscher/software/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/d.lutscher/software/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/d.lutscher/software/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/d.lutscher/software/google-cloud-sdk/completion.zsh.inc'; fi

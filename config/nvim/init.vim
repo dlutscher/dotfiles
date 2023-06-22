@@ -26,7 +26,6 @@ nmap <leader>a <Plug>(coc-codeaction-selected)<CR>
 
 
 let g:coc_global_extensions = [
-  \ 'coc-spell-checker',
   \ 'coc-prettier',
   \ 'coc-git',
   \ 'coc-tsserver',

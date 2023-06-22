@@ -47,11 +47,3 @@ export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/
 # don't update non-relevant dependencies when installing a package
 export HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK=1
 
-
-# --------------------------------------------------------------
-# Project specific
-# --------------------------------------------------------------
-
-# add DSM repo to python path
-export WORK_PROJECTS_DIR="$HOME/Documents/projects"
-export PYTHONPATH="$WORK_PROJECTS_DIR/dh-cc-automations-ds/automations:$WORK_PROJECTS_DIR/dh-cc-automations-ds:$PYTHONPATH"

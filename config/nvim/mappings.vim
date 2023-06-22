@@ -29,8 +29,8 @@ tnoremap <C-K> <C-\><C-N><C-W>k
 tnoremap <C-L> <C-\><C-N><C-W>l
 
 " create new splits
-nnoremap <Leader>sh :split
-nnoremap <Leader>sv :vsplit
+nnoremap <Leader>sh :split<CR>
+nnoremap <Leader>sv :vsplit<CR>
 
 " Jump back mapping
  nnoremap <C-[> :pop<CR>
