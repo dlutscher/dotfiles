@@ -11,6 +11,9 @@ source ~/.custom
 # ZSH configurations
 # --------------------------------------------------------------
 ZSH_THEME="robbyrussell"
+#
+# checks every x days for an update
+export UPDATE_ZSH_DAYS=7
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
@@ -23,11 +26,7 @@ plugins=(
   docker
   emoji
   git zsh-syntax-highlighting
-
 )
-
-# checks every x days for an update
-export UPDATE_ZSH_DAYS=7
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -38,14 +37,10 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 export ZSH_CUSTOM=$ZSH/custom
 
 
-
 # --------------------------------------------------------------
 # User configuration
 # --------------------------------------------------------------
 source $ZSH/oh-my-zsh.sh
-
-# Fasd initialization
-eval "$(fasd --init auto)"
 
 # Run tmux on start
 if which tmux >/dev/null 2>&1; then
@@ -64,20 +59,12 @@ fi
 # eval "$(pyenv init -)"  # for older pyenv versions
 eval "$(pyenv init --path)"  # for newer pyenv versions
 
-
-# autocomplete for terraform
-autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /usr/local/bin/terraform terraform
-
-
 # for some reason these exa related aliases only work when I put them here
 # at the very end of the file (and not in aliases)
 alias l="exa"
 alias ll="exa -bghl --color=automatic"
 alias la="exa -abghl --git --color=automatic"
 alias tree="exa --tree"
-
-export PATH="$HOME/.poetry/bin:$PATH"
 
 autoload -Uz compinit
 zstyle ':completion:*' menu select
@@ -91,7 +78,9 @@ export ZPLUG_HOME=/opt/homebrew/opt/zplug
 source $ZPLUG_HOME/init.zsh
 
 zplug "b4b4r07/enhancd", use:init.sh
-# export ENHANCD_FILTER=fzy
+# use fuzzy finder
+export ENHANCD_FILTER=fzf
+
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then

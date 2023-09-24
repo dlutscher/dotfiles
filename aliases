@@ -1,7 +1,3 @@
-# Fasd aliases
-alias v='f -e nvim' # quick opening files with vim
-alias vd='d -e nvim' # quick opening files with vim using folder name as pattern
-
 # use nvim
 alias vi=nvim
 
@@ -30,15 +26,9 @@ alias gdiff='git difftool --extcmd icdiff -y'
 alias lb='git checkout $(git branch -a | grep -v remotes | tr "*" " "| fzf)'
 alias rb='git checkout $(git branch -a | grep remotes | tr "*" " " | sed "s/remotes\/origin\///" | fzf)'
 
-
 # kubectl shortcut
 alias k="kubectl"
 
-# --------------------------------------------------------------
-# OSX-Only Aliases
-# --------------------------------------------------------------
-
 # Remove DS_Store files recursively
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
-alias ssh='TERM=xterm-256color ssh'
 
