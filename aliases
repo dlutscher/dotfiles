@@ -16,13 +16,6 @@ alias cp="cp -iv"
 alias rm="rm -iv"
 alias mv="mv -iv"
 
-# Better default du and df
-alias du="du -cksh"
-alias df="df -h"
-
-# Overriding system ctags
-alias ctags="`brew --prefix`/bin/ctags"
-
 # Reload the shell
 alias reload="exec ${SHELL} -l"
 
@@ -38,12 +31,6 @@ alias lb='git checkout $(git branch -a | grep -v remotes | tr "*" " "| fzf)'
 alias rb='git checkout $(git branch -a | grep remotes | tr "*" " " | sed "s/remotes\/origin\///" | fzf)'
 
 
-# getting the current weather via CLI
-alias weather="curl wttr.in/berlin"
-
-# combine bat with fzf for syntax-hilighted fuzzy search previews
-alias fbat="fzf --preview 'bat --color=always --style=numbers --line-range=:500 {}'"
-
 # kubectl shortcut
 alias k="kubectl"
 
@@ -55,33 +42,3 @@ alias k="kubectl"
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
 alias ssh='TERM=xterm-256color ssh'
 
-
-
-# --------------------------------------------------------------
-# work project specific aliases
-# --------------------------------------------------------------
-
-# usually all exports live in the `exports` file however these exports
-# are only used here so it's easier to maintain / see what they refer to
-export AC_DSM_REPO='/Users/d.lutscher/Documents/projects/dh-cc-automations-ds'
-export AC_BACKEND_REPO='/Users/d.lutscher/Documents/projects/dh-cc-automations'
-
-
-# poetry shell Autocomp DSM repo
-alias ads='. $AC_DSM_REPO/.venv/bin/activate'
-
-# load backend Prod environment and kubectl -> necessary to read postgres read-replica and get experiments filters
-alias load_env_kubectl_testing='source $AC_BACKEND_REPO/scripts/load_env.sh testing && source $AC_BACKEND_REPO/scripts/load_kubectl_context.sh'
-alias load_env_kubectl_staging='source $AC_BACKEND_REPO/scripts/load_env.sh staging && source $AC_BACKEND_REPO/scripts/load_kubectl_context.sh'
-alias load_env_kubectl_us='source $AC_BACKEND_REPO/scripts/load_env.sh us && source $AC_BACKEND_REPO/scripts/load_kubectl_context.sh'
-
-
-# access postgres read replica - NOTE: requires to run env loading alias (see above) first
-alias psql_testing='. ~/scripts/access_autocomp_db_testing.sh'
-alias psql_staging='. ~/scripts/access_autocomp_db_staging.sh'
-alias psql_us='. ~/scripts/access_autocomp_db_us.sh'
-export PATH="$HOME/.local/bin:$PATH"
-
-# shortcut for tmuxinator sessions
-alias tmds='tmuxinator start autocomp-data-science'
-alias tmbackend='tmuxinator start autocomp-backend'
