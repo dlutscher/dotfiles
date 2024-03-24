@@ -269,6 +269,13 @@ require('lazy').setup({
   },
 
   {
+    'AckslD/nvim-pytrize.lua',
+    config = function()
+      require('pytrize').setup {}
+    end,
+  },
+
+  {
     'nvim-tree/nvim-tree.lua',
     event = 'VimEnter',
     config = function()
