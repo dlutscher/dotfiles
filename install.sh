@@ -43,7 +43,9 @@ mv -af $HOME/.exports $HOME/.aliases $HOME/dotfiles_OLD/ 2>/dev/null
 mv -af $HOME/.tmux.conf $HOME/dotfiles_OLD/ 2>/dev/null
 
 echo "Creating symlinks"
-DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
+# In zsh `${BASH_SOURCE[0]}` is not defined. Use `$0` instead to obtain the
+# directory of this script regardless of the shell being used.
+DOTFILES_DIR="$( cd "$( dirname "$0" )" >/dev/null && pwd )"
 
 ln -nvfs $DOTFILES_DIR/zshrc           $HOME/.zshrc
 ln -nvfs $DOTFILES_DIR/tmux.conf       $HOME/.tmux.conf

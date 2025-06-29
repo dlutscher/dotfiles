@@ -20,12 +20,14 @@ export UPDATE_ZSH_DAYS=7
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-syntax-highlighting)
 plugins=(
-  git zsh-autosuggestions brew pip
+  git
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+  brew
+  pip
   docker
   emoji
-  git zsh-syntax-highlighting
 )
 
 # Uncomment the following line if you want to disable marking untracked files
