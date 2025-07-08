@@ -25,3 +25,5 @@ export PATH="$HOME/.poetry/bin:$PATH"
 # add a python3 lib to $PATH to use tmux's powerline feature
 export PATH="$HOME/.pyenv/versions/3.7.4/bin/python:$PATH"
 
+# used for gh CLI
+export HOMEBREW_GITHUB_API_TOKEN=$(gh auth token)
