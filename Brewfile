@@ -1,89 +1,141 @@
+# Taps
 tap "derailed/k9s"
 tap "hashicorp/tap"
 tap "homebrew/bundle"
-tap "homebrew/cask"
-tap "homebrew/core"
 tap "homebrew/services"
 tap "kreuzwerker/taps"
 tap "railwaycat/emacsmacport"
 tap "universal-ctags/universal-ctags"
 tap "warrensbox/tap"
-brew "xz"
-brew "gcc"
-brew "grpc"
-brew "openblas"
-brew "apache-arrow"
-brew "aws-iam-authenticator"
-brew "gettext"
-brew "cmake"
-brew "colima"
+
+# ------------------------------------------------------------------------------
+# Core CLI tools
+# ------------------------------------------------------------------------------
 brew "coreutils"
 brew "diffutils"
-brew "dive"
-brew "dlib"
-brew "docker"
-brew "docker-compose"
-brew "exa"
 brew "findutils"
-brew "fzf"
-brew "git"
 brew "gnu-getopt"
-brew "graphviz"
-brew "helm"
-brew "helmfile"
-brew "htop"
-brew "icdiff"
-brew "jpeg"
+brew "fzf"
+brew "ripgrep"
+brew "the_silver_searcher"
 brew "jq"
-brew "jsonnet"
-brew "jsonnet-bundler"
-brew "k6"
-brew "kubernetes-cli"
-brew "lapack"
-brew "libev"
-brew "libomp"
-brew "libpq"
-brew "llvm"
-brew "mas"
+brew "htop"
 brew "tree-sitter"
+brew "wget"
+
+# ------------------------------------------------------------------------------
+# Development tools
+# ------------------------------------------------------------------------------
+brew "git"
 brew "neovim"
+brew "vim"
+brew "tmux"
+brew "exa"                          # Modern ls replacement
+
+# Languages & version managers
 brew "node"
-brew "opam"
-brew "openjdk"
-brew "postgresql@14"
 brew "pyenv"
 brew "pyenv-virtualenv"
-brew "redis"
-brew "ripgrep"
-brew "sops"
-brew "ssh-vault"
-brew "telnet"
+brew "openjdk"
+brew "opam"                         # OCaml package manager
+
+# Build tools
+brew "cmake"
+brew "gcc"
+brew "xz"
+brew "zlib"
+
+# ------------------------------------------------------------------------------
+# DevOps / Cloud
+# ------------------------------------------------------------------------------
+# Containers
+brew "colima"                       # Docker runtime for macOS
+brew "docker"
+brew "docker-compose"
+brew "dive"                         # Docker image explorer
+
+# Kubernetes
+brew "kubernetes-cli"
+brew "helm"
+brew "helmfile"
+brew "derailed/k9s/k9s"
+
+# Terraform / Infrastructure
 brew "terraform"
 brew "terragrunt"
 brew "tflint"
-brew "the_silver_searcher"
-brew "tmux"
-brew "vim"
-brew "yarn"
-brew "zlib"
-brew "zplug"
-brew "zsh-syntax-highlighting"
-brew "derailed/k9s/k9s"
-brew "hashicorp/tap/boundary"
-brew "hashicorp/tap/vault"
-brew "kreuzwerker/taps/m1-terraform-provider-helper"
 brew "warrensbox/tap/tfswitch"
 brew "warrensbox/tap/tgswitch"
+brew "kreuzwerker/taps/m1-terraform-provider-helper"
+
+# Cloud providers
+brew "aws-iam-authenticator"
+
+# HashiCorp tools
+brew "hashicorp/tap/vault"
+brew "hashicorp/tap/boundary"
+brew "sops"
+
+# Testing
+brew "k6"                           # Load testing
+
+# ------------------------------------------------------------------------------
+# Data tools
+# ------------------------------------------------------------------------------
+brew "postgresql@14"
+brew "libpq"
+brew "redis"
+brew "apache-arrow"
+brew "grpc"
+
+# ------------------------------------------------------------------------------
+# Python / ML dependencies
+# ------------------------------------------------------------------------------
+brew "openblas"
+brew "lapack"
+brew "dlib"
+brew "libomp"
+brew "graphviz"
+
+# ------------------------------------------------------------------------------
+# Misc libraries
+# ------------------------------------------------------------------------------
+brew "gettext"
+brew "jpeg"
+brew "libev"
+brew "llvm"
+brew "icdiff"                       # Side-by-side diff
+brew "jsonnet"
+brew "jsonnet-bundler"
+brew "ssh-vault"
+brew "telnet"
+brew "yarn"
+
+# ------------------------------------------------------------------------------
+# Shell
+# ------------------------------------------------------------------------------
+brew "zplug"
+brew "zsh-syntax-highlighting"
+brew "mas"                          # Mac App Store CLI
+
+# ------------------------------------------------------------------------------
+# Casks (GUI applications)
+# ------------------------------------------------------------------------------
 cask "emacs-mac"
 cask "firefox"
 cask "google-chrome"
-cask "marta"
+cask "iterm2"
+cask "marta"                        # File manager
 cask "postman"
 cask "slack"
-cask "spectacle"
+cask "spectacle"                    # Window management
 cask "spotify"
 cask "whatsapp"
 cask "xquartz"
+
+# ------------------------------------------------------------------------------
+# Mac App Store
+# ------------------------------------------------------------------------------
 mas "GarageBand", id: 682658836
 mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
