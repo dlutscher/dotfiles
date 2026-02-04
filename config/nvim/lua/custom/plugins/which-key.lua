@@ -6,6 +6,8 @@ return {
     spec = {
       { '<leader>c', group = '[C]ode' },
       { '<leader>d', group = '[D]ocument' },
+      { '<leader>f', group = '[F]ind' },
+      { '<leader>g', group = '[G]it' },
       { '<leader>p', group = '[P]roject' },
       { '<leader>r', group = '[R]ename' },
       { '<leader>s', group = '[S]earch' },
