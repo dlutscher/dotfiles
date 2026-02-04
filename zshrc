@@ -20,7 +20,6 @@ export UPDATE_ZSH_DAYS=7
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-syntax-highlighting)
 plugins=(
   git zsh-autosuggestions brew pip
   docker
@@ -78,6 +77,7 @@ export ZPLUG_HOME=/opt/homebrew/opt/zplug
 source $ZPLUG_HOME/init.zsh
 
 zplug "b4b4r07/enhancd", use:init.sh
+zplug load
 # use fuzzy finder
 export ENHANCD_FILTER=fzf
 
