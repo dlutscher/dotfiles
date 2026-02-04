@@ -1,6 +1,6 @@
 # ignore any credentials or secrets
 *credentials*
 *secrets*
-*custom*
 
 bin/*
+**/.DS_STORE

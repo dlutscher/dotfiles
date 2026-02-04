@@ -100,3 +100,9 @@ if [ -f '/Users/d.lutscher/software/google-cloud-sdk/path.zsh.inc' ]; then . '/U
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/d.lutscher/software/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/d.lutscher/software/google-cloud-sdk/completion.zsh.inc'; fi
+
+# psql CLI
+export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
+
+# opencode
+export PATH=/Users/d.lutscher/.opencode/bin:$PATH
